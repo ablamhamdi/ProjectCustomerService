@@ -1,0 +1,46 @@
+
+    
+            <table class="min-w-full text-center text-sm font-light">
+              <thead
+                class="border-b bg-slate-700 font-medium text-white dark:border-neutral-500 dark:bg-neutral-900">
+                <tr>
+                  <th scope="col" class=" px-6 py-4">firstName</th>
+                  <th scope="col" class=" px-6 py-4">lastName</th>
+                  <th scope="col" class=" px-6 py-4">email</th>
+                  <th scope="col" class=" px-6 py-4">gender</th>
+                  <th scope="col" class=" px-6 py-4">address</th>
+                  <th scope="col" class=" px-6 py-4">balance</th>
+                  <th scope="col" class=" px-6 py-4">Account Type</th>
+                  <th scope="col" class=" px-6 py-4">Actions</th>
+                
+                </tr>
+               
+              </thead>
+              <tbody>
+                <tr *ngFor="let customer of customers" class="border-b dark:border-neutral-500">
+                  <td class="whitespace-nowrap  px-6 py-4 font-medium">{{ customer.firstName }}</td>
+                  <td class="whitespace-nowrap  px-6 py-4 ">{{ customer.lastName }}</td>
+                  <td class="whitespace-nowrap  px-6 py-4">{{ customer.email }}</td>
+                  <td class="whitespace-nowrap  px-6 py-4">{{ customer.gender }}</td>
+                  <td class="whitespace-nowrap  px-6 py-4">{{ customer.address }}</td>
+                  <td class="whitespace-nowrap  px-6 py-4">{{ customer?.account?.balance }}</td>
+                  <td class="whitespace-nowrap  px-6 py-4">{{ customer?.account?.accountType }}</td>
+                  <td class="whitespace-nowrap  px-6 py-4">
+                  <button
+                    type="button"
+                    (click)="delete(customer)"
+                    class="m-3 inline-block rounded bg-danger px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#dc4c64] transition duration-150 ease-in-out hover:bg-danger-600 hover:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:bg-danger-600 focus:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:outline-none focus:ring-0 active:bg-danger-700 active:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)]">
+                    DELETE
+                  </button>
+                  <button
+                    type="button"                   
+                    [routerLink]="['/update', customer?.id]"routerLinkActive="router-link-active"
+                    class="m-3 inline-block rounded bg-warning px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#e4a11b] transition duration-150 ease-in-out hover:bg-warning-600 hover:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] focus:bg-warning-600 focus:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] focus:outline-none focus:ring-0 active:bg-warning-700 active:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)]">
+                    UPDATE
+                  </button></td>
+                </tr>
+            </tbody>
+            </table>
+   
+ 
+
